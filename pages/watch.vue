@@ -29,8 +29,8 @@
       <div class="lg:col-span-2 space-y-6">
         <!-- Passing the dedicated streaming endpoint as the src -->
         <VideoPlayer
-            v-if="asset && asset.id"
-            :asset-id="asset.id"
+            v-if="asset"
+            :assetId="asset.id"
             :src="`/api/stream/${asset.id}`"
         />
 
@@ -58,7 +58,7 @@
 
           <div class="flex justify-between items-center py-1">
             <span class="text-slate-500">PAYLOAD_SIZE</span>
-            <span class="text-emerald-400 font-semibold">{{ formatBytes(asset.payloadSize) }}</span>
+            <span class="text-emerald-400 font-semibold">{{ formatBytes(asset.fileSize) }}</span>
           </div>
 
           <div class="flex flex-col gap-1.5 py-1">
