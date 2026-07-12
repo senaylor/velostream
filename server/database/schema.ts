@@ -15,6 +15,7 @@ export const assets = pgTable('assets', {
     duration: integer('duration'),
     thumbnailUri: text('thumbnail_uri'),
 
+    status: varchar('status', {length: 50}).default('pending').notNull(),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().notNull(),
 });
